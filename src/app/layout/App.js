@@ -27,11 +27,13 @@ class App extends Component {
                 <Route path='/events' component={EventDashboard}/>
                 <Route path='/test' component={TestComponent}/>
                 <Route path='/settings' component={SettingsDashboard}/>
+                <Route path='/event/:id' component={EventDetailedPage}/>
+                <Route path='/manage/:id' component={EventForm}/>
+                <Route path='/createEvent' component={EventForm}/>
                 {/* 
-                <Route path='/events/:id' component={EventDetailedPage}/>
                 <Route path='/people' component={PeopleDashboard}/>
                 <Route path='/profile/:id' component={UserDetailedPage}/>
-                <Route path='/createEvent' component={EventForm}/> */}
+                 */}
               </Switch>
             </Container>
           </div>
