@@ -7,16 +7,18 @@ import PlacesAutocomplete, {
   getLatLng
 } from "react-places-autocomplete";
 
-import { incrementCounter, decrementCounter } from "./testActions";
+import { incrementAsync, decrementAsync } from "./testActions";
 import { openModal } from '../modals/modalActions'
+import { stat } from "fs";
 
 const mapState = state => ({
-  data: state.test.data
+  data: state.test.data,
+  loading:state.test.loading,
 });
 
 const actions = {
-  incrementCounter,
-  decrementCounter,
+  incrementAsync,
+  decrementAsync,
   openModal
 };
 
@@ -43,14 +45,14 @@ class TestComponent extends Component {
 
   render() {
 
-    const { incrementCounter, decrementCounter, data, openModal } = this.props;
+    const { incrementAsync, decrementAsync, data, openModal, loading } = this.props;
 
     return (
       <div>
         <h1>Test</h1>
         <h3>The answer is: {data}</h3>
-        <Button onClick={incrementCounter} color="green" content="increment" />
-        <Button onClick={decrementCounter} color="red" content="decrement" />
+        <Button loading={loading} onClick={incrementAsync} color="green" content="increment" />
+        <Button loading={loading} onClick={decrementAsync} color="red" content="decrement" />
         <Button onClick={() => openModal('TestModal', {data:43})} color="teal" content="Open Modal" />
 
         <PlacesAutocomplete
