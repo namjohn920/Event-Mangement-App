@@ -176,11 +176,9 @@ class EventForm extends Component {
   }
 }
 
-export default connect(
-  mapState,
-  actions
-)(
-  reduxForm({ form: "eventForm", enableReinitialize: true, validate })(
+
+export default connect(mapState, actions)(
+  reduxForm({ form: 'eventForm', enableReinitialize: true, validate })(
     EventForm
   )
 );

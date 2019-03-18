@@ -9,7 +9,6 @@ import PlacesAutocomplete, {
 
 import { incrementAsync, decrementAsync } from "./testActions";
 import { openModal } from '../modals/modalActions'
-import { stat } from "fs";
 
 const mapState = state => ({
   data: state.test.data,
