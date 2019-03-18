@@ -72,8 +72,6 @@ const AccountPage = ({ error, invalid, submitting, handleSubmit, updatePassword,
           </div> }
     </Segment>
   );
-  console.log(providerId)
-  
 };
 
 export default reduxForm({ form: 'account', validate })(AccountPage);
